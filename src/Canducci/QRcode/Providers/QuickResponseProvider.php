@@ -6,8 +6,7 @@ class QuickResponseProvider extends ServiceProvider {
 
 	public function register()
     {
-
-        $this->app->singleton('Canducci\Weather\Contracts\IWeatherClient',
-        	'Canducci\Weather\WeatherClient');
+        $this->app->singleton('Canducci\QRcode\Contracts\IQuickResponse',
+        	'Canducci\QRcode\QuickResponse');
     }
 }
