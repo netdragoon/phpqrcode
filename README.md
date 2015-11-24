@@ -49,4 +49,47 @@ countries.
 Reed-Solomon code encoder is written by Phil Karn, KA9Q.
 Copyright (C) 2002, 2003, 2004, 2006 Phil Karn, KA9Q
 
+# Canducci QuickResponse
+
+### QR Code
+
+[![Canducci QuickResponse](http://i666.photobucket.com/albums/vv25/netdragoon/pacote_zpsvgkl4fbt.png)](https://packagist.org/packages/canducci/quickresponse)
+
+## Instalação
+
+### Configurações
+
+___Para aplicações Laravel, configure dessa maneira:___
+
+Adicione em seu `composer.json` essa chave:
+
+```PHP
+"canducci/quickresponse": "0.1.*"
+```
+
+Agora execute esse comando no seu console:
+
+    $ composer update
+
+
+Abra o arquivo `config/app.php` e adicione essa linha em suas configurações de `providers`:
+
+```PHP
+'providers' => [
+    ...    
+    Canducci\QRcode\Providers\QuickResponseProvider::class,
+    
+]
+```
+
+Para funcionar o apelido (facade) adicione essa linha em suas configurações de `aliases`:
+```PHP
+'aliases' => [
+
+    ...
+    'QuickResponse' => Canducci\QRcode\Facades\QuickResponse::class
+    
+]
+```
+	
 
