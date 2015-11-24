@@ -91,5 +91,124 @@ Para funcionar o apelido (facade) adicione essa linha em suas configurações de
     
 ]
 ```
+
+###Como utilizar no Laravel
+
+___Para Texto ou Links:___
+
+    $name = "test";
+    $msg = new \Canducci\QRcode\MessageText();
+    $msg->setText($name);
+    QuickResponse::data($msg)->saveAs('q/text.png');
+    
+___Para Telefone___
+    
+    $msg = new \Canducci\QRcode\MessagePhone();
+    $msg->setCountry(55)
+        ->setArea(11)
+        ->setNumber(11111111);
+    QuickResponse::data($msg)->saveAs('q/phone.png');
+    
+___Para SMS___
+    
+    $msg = new \Canducci\QRcode\MessageSMS();
+    $msg->setCountry(55)
+        ->setArea(11)
+        ->setNumber(11111111);
+    QuickResponse::data($msg)->saveAs('q/sms.png');    
 	
 
+___Para Email Simples___
+
+    $msg = new \Canducci\QRcode\MessageSimpleEmail();
+    $msg->setEmail('test@test.com');
+    QuickResponse::data($msg)->saveAs('q/emailsimple.png');
+        
+___Para Email Completo___
+    
+    $msg = new \Canducci\QRcode\MessageExtendedEmail();
+    $msg->setEmail('test@test.com')
+        ->setSubject('Test')
+        ->setBody('Test Complete');
+    QuickResponse::data($msg)->saveAs('q/email.png');
+
+___Para Skype___
+
+    $msg = new \Canducci\QRcode\MessageSkype();
+    $msg->setName('test@test.com');
+    QuickResponse::data($msg)->saveAs('q/skype.png');
+
+___Cartão de Visita Simples___
+
+    $msg = new \Canducci\QRcode\MessageBusinessCardSimple();
+    
+    $people = new \Canducci\QRcode\MessagePeople();
+    $people->setName('Nome');
+    
+    $phone = new \Canducci\QRcode\MessagePhone();
+    $phone->setCountry(55)
+        ->setArea(11)
+        ->setNumber(11111111);
+        
+    $msg->setPeople($people);
+    $msg->setPhone($phone);
+    
+    QuickResponse::data($msg)->saveAs('q/cardsimple.png');
+    
+___Cartão de Visita Completo___
+
+    $msg = new \Canducci\QRcode\MessageBusinessCardDetailed();
+    $people = new \Canducci\QRcode\MessagePeople();
+    $people->setName('Test');
+    
+    $phone1 = new \Canducci\QRcode\MessagePhone();
+    $phone1->setCountry(55)
+        ->setArea(11)
+        ->setNumber(11111111);
+        
+    $phone2 = new \Canducci\QRcode\MessagePhone();
+    $phone2->setCountry(55)
+        ->setArea(12)
+        ->setNumber(12121212);
+        
+    $phone3 = new \Canducci\QRcode\MessagePhone();
+    $phone3->setCountry(55)
+        ->setArea(13)
+        ->setNumber(13131313);
+        
+    $msg->setPeople($people);
+    $msg->setPhone($phone1);
+    $msg->setPhonePrivate($phone2);
+    $msg->setPhoneCelular($phone3);
+    
+    $msg->setEmail('test@test.com');
+    $msg->setOrganizationName('Home Office');
+    $msg->setSortName('test1;test2');
+    $address = new \Canducci\QRcode\MessageAddress();
+    $address->setCountry('Brasil')
+            ->setExt('Home')
+            ->setLabel('Office')
+            ->setPobox('')
+            ->setTown('Sao Paulo')
+            ->setPostCode('04500000')
+            ->setRegion('SP')
+            ->setStreet('Rua Test, 001');
+            
+    $msg->setMessageAddress($address);
+    
+    QuickResponse::data($msg)->saveAs('q/carsdetailed.png');
+    
+___Cartão de Visita Simples com Foto___
+
+    $msg = new \Canducci\QRcode\MessageBusinessCardPhoto();
+    $people = new \Canducci\QRcode\MessagePeople();
+    $people->setName('Test');
+    $phone = new \Canducci\QRcode\MessagePhone();
+    $phone->setCountry(55)
+        ->setArea(11)
+        ->setNumber(11111111);
+    $msg->setPeople($people);
+    $msg->setPhone($phone);
+    //Foto proposta de 40x40 de baixa resolução 
+    $msg->setPhoto(file_get_contents('40x40.jpg'));
+    QuickResponse::data($msg)->saveAs('q/carsphoto.png');
