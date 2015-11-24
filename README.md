@@ -84,7 +84,7 @@ Abra o arquivo `config/app.php` e adicione essa linha em suas configurações de
 ```PHP
 'providers' => [
     ...    
-    Canducci\QRcode\Providers\QuickResponseProvider::class,
+    Canducci\QuickResponse\Providers\QuickResponseProvider::class,
     
 ]
 ```
@@ -94,7 +94,7 @@ Para funcionar o apelido (facade) adicione essa linha em suas configurações de
 'aliases' => [
 
     ...
-    'QuickResponse' => Canducci\QRcode\Facades\QuickResponse::class
+    'QuickResponse' => Canducci\QuickResponse\Facades\QuickResponse::class
     
 ]
 ```
@@ -104,13 +104,13 @@ Para funcionar o apelido (facade) adicione essa linha em suas configurações de
 ___Para Texto ou Links:___
 
     $name = "test";
-    $msg = new \Canducci\QRcode\MessageText();
+    $msg = new \Canducci\QuickResponse\MessageText();
     $msg->setText($name);
     QuickResponse::data($msg)->saveAs('q/text.png');
     
 ___Para Telefone___
     
-    $msg = new \Canducci\QRcode\MessagePhone();
+    $msg = new \Canducci\QuickResponse\MessagePhone();
     $msg->setCountry(55)
         ->setArea(11)
         ->setNumber(11111111);
@@ -118,7 +118,7 @@ ___Para Telefone___
     
 ___Para SMS___
     
-    $msg = new \Canducci\QRcode\MessageSMS();
+    $msg = new \Canducci\QuickResponse\MessageSMS();
     $msg->setCountry(55)
         ->setArea(11)
         ->setNumber(11111111);
@@ -127,13 +127,13 @@ ___Para SMS___
 
 ___Para Email Simples___
 
-    $msg = new \Canducci\QRcode\MessageSimpleEmail();
+    $msg = new \Canducci\QuickResponse\MessageSimpleEmail();
     $msg->setEmail('test@test.com');
     QuickResponse::data($msg)->saveAs('q/emailsimple.png');
         
 ___Para Email Completo___
     
-    $msg = new \Canducci\QRcode\MessageExtendedEmail();
+    $msg = new \Canducci\QuickResponse\MessageExtendedEmail();
     $msg->setEmail('test@test.com')
         ->setSubject('Test')
         ->setBody('Test Complete');
@@ -141,18 +141,18 @@ ___Para Email Completo___
 
 ___Para Skype___
 
-    $msg = new \Canducci\QRcode\MessageSkype();
+    $msg = new \Canducci\QuickResponse\MessageSkype();
     $msg->setName('test@test.com');
     QuickResponse::data($msg)->saveAs('q/skype.png');
 
 ___Cartão de Visita Simples___
 
-    $msg = new \Canducci\QRcode\MessageBusinessCardSimple();
+    $msg = new \Canducci\QuickResponse\MessageBusinessCardSimple();
     
-    $people = new \Canducci\QRcode\MessagePeople();
+    $people = new \Canducci\QuickResponse\MessagePeople();
     $people->setName('Nome');
     
-    $phone = new \Canducci\QRcode\MessagePhone();
+    $phone = new \Canducci\QuickResponse\MessagePhone();
     $phone->setCountry(55)
         ->setArea(11)
         ->setNumber(11111111);
@@ -164,21 +164,21 @@ ___Cartão de Visita Simples___
     
 ___Cartão de Visita Completo___
 
-    $msg = new \Canducci\QRcode\MessageBusinessCardDetailed();
-    $people = new \Canducci\QRcode\MessagePeople();
+    $msg = new \Canducci\QuickResponse\MessageBusinessCardDetailed();
+    $people = new \Canducci\QuickResponse\MessagePeople();
     $people->setName('Test');
     
-    $phone1 = new \Canducci\QRcode\MessagePhone();
+    $phone1 = new \Canducci\QuickResponse\MessagePhone();
     $phone1->setCountry(55)
         ->setArea(11)
         ->setNumber(11111111);
         
-    $phone2 = new \Canducci\QRcode\MessagePhone();
+    $phone2 = new \Canducci\QuickResponse\MessagePhone();
     $phone2->setCountry(55)
         ->setArea(12)
         ->setNumber(12121212);
         
-    $phone3 = new \Canducci\QRcode\MessagePhone();
+    $phone3 = new \Canducci\QuickResponse\MessagePhone();
     $phone3->setCountry(55)
         ->setArea(13)
         ->setNumber(13131313);
@@ -191,7 +191,7 @@ ___Cartão de Visita Completo___
     $msg->setEmail('test@test.com');
     $msg->setOrganizationName('Home Office');
     $msg->setSortName('test1;test2');
-    $address = new \Canducci\QRcode\MessageAddress();
+    $address = new \Canducci\QuickResponse\MessageAddress();
     $address->setCountry('Brasil')
             ->setExt('Home')
             ->setLabel('Office')
@@ -207,10 +207,10 @@ ___Cartão de Visita Completo___
     
 ___Cartão de Visita Simples com Foto___
 
-    $msg = new \Canducci\QRcode\MessageBusinessCardPhoto();
-    $people = new \Canducci\QRcode\MessagePeople();
+    $msg = new \Canducci\QuickResponse\MessageBusinessCardPhoto();
+    $people = new \Canducci\QuickResponse\MessagePeople();
     $people->setName('Test');
-    $phone = new \Canducci\QRcode\MessagePhone();
+    $phone = new \Canducci\QuickResponse\MessagePhone();
     $phone->setCountry(55)
         ->setArea(11)
         ->setNumber(11111111);
@@ -226,7 +226,7 @@ ___Rota___
 
     get('print', function()
     {
-        $msg = new \Canducci\QRcode\MessageText();
+        $msg = new \Canducci\QuickResponse\MessageText();
         $msg->setText('https://packagist.org/packages/canducci/quickresponse');
     
         return QuickResponse::data($msg)
@@ -261,9 +261,9 @@ Rode o comando `$ composer update`, e após a instalação use assim:
 
     require 'vendor/autoload.php';    
     
-    $qr      = new Canducci\QRcode\QuickResponse();
+    $qr      = new Canducci\QuickResponse\QuickResponse();
     
-    $msg = new Canducci\QRcode\MessageText();
+    $msg = new Canducci\QuickResponse\MessageText();
     $msg->setText("Test");
     echo $qr->data($msg)->render();
     
