@@ -70,7 +70,7 @@ ___Para aplicações Laravel, configure dessa maneira:___
 Adicione em seu `composer.json` essa chave:
 
 ```PHP
-"canducci/quickresponse": "0.1.*"
+"canducci/quickresponse": "dev-master"
 ```
 
 Agora execute esse comando no seu console:
