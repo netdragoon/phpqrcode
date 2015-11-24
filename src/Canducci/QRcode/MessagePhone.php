@@ -8,25 +8,40 @@ class MessagePhone implements IMessagePhone {
     protected $area;
     protected $number;
 
-    public function country($code)
+    public function getNumber()
+    {
+        return $this->number;
+    }
+
+    public function getArea()
+    {
+        return $this->area;
+    }
+
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    public function setCountry($code)
     {
         $this->country = $code;
         return $this;
     }
 
-    public function area($value)
+    public function setArea($value)
     {
         $this->area = $value;
         return $this;
     }
 
-    public function number($value)
+    public function setNumber($value)
     {
         $this->number = $value;
         return $this;
     }
 
-    public function get()
+    public function getMessage()
     {
         return sprintf('tel:%s%s%s',
             $this->country,

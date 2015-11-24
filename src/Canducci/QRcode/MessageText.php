@@ -5,11 +5,17 @@ use Canducci\QRcode\Contracts\IMessageText;
 class MessageText implements IMessageText {
 
 	protected $text;
-	public function text($text)
+
+	public function getText()
+	{
+		return $this->text;
+	}
+
+	public function setText($text)
 	{
 		$this->text = $text;
 	}	
-	public function get()
+	public function getMessage()
 	{
 		return $this->text;
 	}

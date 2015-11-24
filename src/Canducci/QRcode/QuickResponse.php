@@ -17,13 +17,14 @@ class QuickResponse implements IQuickResponse {
 
 	public function render()
 	{
-		return QRcode::png($this->value);
+		QRcode::png($this->value);
+		return true;
 	}
 
 
 	public function data(IMessageType $message)
 	{
-		$this->value = $message->get();
+		$this->value = $message->getMessage();
 		return $this;
 	}
 
@@ -31,5 +32,6 @@ class QuickResponse implements IQuickResponse {
 	public function saveAs($path)
 	{
 		QRcode::png($this->value, $path);
+		return true;
 	}
 }

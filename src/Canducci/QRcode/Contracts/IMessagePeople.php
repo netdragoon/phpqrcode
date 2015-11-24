@@ -1,7 +1,6 @@
 <?php namespace Canducci\QRcode\Contracts;
 
-
-interface IMessageSkype extends IMessagePeople {
+interface IMessagePeople extends IMessageType {
 
     public function setName($name);
     public function getName();

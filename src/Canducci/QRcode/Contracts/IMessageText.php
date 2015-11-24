@@ -2,6 +2,7 @@
 
 interface IMessageText extends IMessageType {
 		
-	public function text($text);
+	public function setText($text);
+	public function getText();
 
 }

@@ -2,7 +2,10 @@
 
 interface IMessageExtendedEmail extends IMessageSimpleEmail {
 
-    public function subject($value);
-    public function body($value);
+    public function setSubject($value);
+    public function setBody($value);
+    public function getSubject();
+    public function getBody();
+
 
 }

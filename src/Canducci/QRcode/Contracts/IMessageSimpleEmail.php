@@ -2,5 +2,6 @@
 
 interface IMessageSimpleEmail extends IMessageType {
 
-    public function email($value);
+    public function setEmail($value);
+    public function getEmail();
 }

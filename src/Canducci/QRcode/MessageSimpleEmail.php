@@ -5,13 +5,19 @@ use Canducci\QRcode\Contracts\IMessageSimpleEmail;
 class MessageSimpleEmail implements IMessageSimpleEmail {
 
     protected $email;
-    public function email($value)
+
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    public function setEmail($value)
     {
         $this->email = $value;
         return $this;
     }
 
-    public function get()
+    public function getMessage()
     {
         return sprintf('mailto:%s',$this->email);
     }

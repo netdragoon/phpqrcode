@@ -2,6 +2,6 @@
 
 interface IMessageType {
 
-	public function get();
+	public function getMessage();
 	
 }

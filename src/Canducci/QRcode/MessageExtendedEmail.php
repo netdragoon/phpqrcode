@@ -7,25 +7,40 @@ class MessageExtendedEmail implements IMessageExtendedEmail {
     protected $email;
     protected $subject;
     protected $body;
-    public function email($value)
+
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    public function getSubject()
+    {
+        return $this->subject;
+    }
+
+    public function getBody()
+    {
+        return $this->body;
+    }
+    public function setEmail($value)
     {
         $this->email = $value;
         return $this;
     }
 
-    public function subject($value)
+    public function setSubject($value)
     {
         $this->subject = $value;
         return $this;
     }
 
-    public function body($value)
+    public function setBody($value)
     {
         $this->body = $value;
         return $this;
     }
 
-    public function get()
+    public function getMessage()
     {
         return sprintf('mailto:%s?subject=%s&body=%s',
             $this->email,
