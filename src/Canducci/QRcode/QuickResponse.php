@@ -2,36 +2,42 @@
 
 use Canducci\QRcode\Contracts\IMessageType;
 use Canducci\QRcode\Contracts\IQuickResponse;
-use QRcode;
+use QRcode as QR;
 
 require __DIR__."/Lib/qrlib.php";
 
 class QuickResponse implements IQuickResponse {
 
-	protected $value;
+	protected $message;
 
 	public function __construct()
 	{
 
 	}
 
-	public function render()
-	{
-		QRcode::png($this->value, false, QR_ECLEVEL_L, 4);
-		return true;
-	}
-
-
 	public function data(IMessageType $message)
 	{
-		$this->value = $message->getMessage();
+		$this->message = $message;
 		return $this;
 	}
 
-
-	public function saveAs($path)
+	public function render($level = QuickResponseLevel::L, $pixel = QuickResponsePixel::Three, $frame = QuickResponseFrameSize::Two)
 	{
-		QRcode::png($this->value, $path);
-		return true;
+		return $this->renderAs(false, $level, $pixel, $frame, false);
 	}
+
+	public function saveAs($path, $level = QuickResponseLevel::L, $pixel = QuickResponsePixel::Three, $frame = QuickResponseFrameSize::Two)
+	{
+		return $this->renderAs($path, $level, $pixel, $frame, false);
+	}
+
+	protected function renderAs($path = false,
+								 $level = QuickResponseLevel::L,
+								 $pixel = QuickResponsePixel::Three,
+								 $frame = QuickResponseFrameSize::None,
+								 $print = false)
+	{
+		return QR::png($this->message->getMessage(), $path, $level, $pixel, $frame, $print);
+	}
+
 }
