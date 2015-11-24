@@ -5,7 +5,6 @@ use Canducci\QRcode\Contracts\IMessageSkype;
 class MessageSkype implements IMessageSkype {
 
     protected $name;
-
     public function getName()
     {
         return $this->name;
@@ -14,6 +13,7 @@ class MessageSkype implements IMessageSkype {
     public function setName($name)
     {
         $this->name = $name;
+        return $this;
     }
 
     public function getMessage()

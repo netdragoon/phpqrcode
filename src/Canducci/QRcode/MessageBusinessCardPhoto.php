@@ -11,6 +11,7 @@ class MessageBusinessCardPhoto
     public function setPhoto($byte)
     {
         $this->photo = $byte;
+        return $this;
     }
 
     public function getPhoto()
