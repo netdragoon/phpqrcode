@@ -56,9 +56,10 @@ Copyright (C) 2002, 2003, 2004, 2006 Phil Karn, KA9Q
 [![Canducci QuickResponse](http://i666.photobucket.com/albums/vv25/netdragoon/pacote_zpsvgkl4fbt.png)](https://packagist.org/packages/canducci/quickresponse)
 
 [![Build Status](https://travis-ci.org/netdragoon/phpqrcode.svg)](https://travis-ci.org/netdragoon/phpqrcode)
-[![Packagist](https://img.shields.io/packagist/dt/canducci/quickresponse.svg?style=flat)](https://packagist.org/packages/canducci/quickresponse)
-[![Packagist](https://img.shields.io/packagist/l/canducci/quickresponse.svg)](https://packagist.org/packages/canducci/quickresponse)
-[![Packagist](https://img.shields.io/packagist/v/canducci/quickresponse.svg?label=version)](https://packagist.org/packages/canducci/quickresponse)
+[![Latest Stable Version](https://poser.pugx.org/canducci/quickresponse/v/stable)](https://packagist.org/packages/canducci/quickresponse) 
+[![Total Downloads](https://poser.pugx.org/canducci/quickresponse/downloads)](https://packagist.org/packages/canducci/quickresponse) 
+[![Latest Unstable Version](https://poser.pugx.org/canducci/quickresponse/v/unstable)](https://packagist.org/packages/canducci/quickresponse) 
+[![License](https://poser.pugx.org/canducci/quickresponse/license)](https://packagist.org/packages/canducci/quickresponse)
 
 ## Instalação
 
