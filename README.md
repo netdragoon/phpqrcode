@@ -219,7 +219,34 @@ ___Cartão de Visita Simples com Foto___
     //Foto proposta de 40x40 de baixa resolução 
     $msg->setPhoto(file_get_contents('40x40.jpg'));
     QuickResponse::data($msg)->saveAs('q/carsphoto.png');
+
+###Helpers
+
+```
+$msg = new \Canducci\QuickResponse\MessageText();
+$msg->setText("Test Laravel");
+```
+
+- Save
+```PHP
+qrSaveAs($msg, 't.png');
+//ou
+return quickresponse()->data($msg)->saveAs('1.png');
+//ou
+QuickResponse::data($msg)->saveAs('1.png');
     
+```    
+- Render
+
+```PHP    
+return qrRender($msg); 
+//ou
+return quickresponse()->data($msg)->render();
+//ou
+return QuickResponse::data($msg)->render();
+	
+```	
+	
 ###Direto no navegador:
 
 ___Rota___
