@@ -218,3 +218,22 @@ ___Cartão de Visita Simples com Foto___
     //Foto proposta de 40x40 de baixa resolução 
     $msg->setPhoto(file_get_contents('40x40.jpg'));
     QuickResponse::data($msg)->saveAs('q/carsphoto.png');
+    
+###Direto no navegador:
+
+___Crie um rota___
+
+    get('print', function()
+    {
+        $msg = new \Canducci\QRcode\MessageText();
+        $msg->setText('https://packagist.org/packages/canducci/quickresponse');
+    
+        return QuickResponse::data($msg)
+                ->render();
+    });
+    
+___Em dua View___
+
+    <div>
+        <img src="/print" border="0" />
+    </div>
