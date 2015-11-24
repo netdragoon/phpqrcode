@@ -1,8 +1,8 @@
 <?php namespace Canducci\QuickResponse\Contracts;
 
-use Canducci\QRcode\QuickResponseFrameSize;
-use Canducci\QRcode\QuickResponseLevel;
-use Canducci\QRcode\QuickResponsePixel;
+use Canducci\QuickResponse\QuickResponseFrameSize;
+use Canducci\QuickResponse\QuickResponseLevel;
+use Canducci\QuickResponse\QuickResponsePixel;
 
 interface IQuickResponse {
 
