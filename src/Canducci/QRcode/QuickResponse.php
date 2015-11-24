@@ -17,7 +17,7 @@ class QuickResponse implements IQuickResponse {
 
 	public function render()
 	{
-		QRcode::png($this->value);
+		QRcode::png($this->value, false, QR_ECLEVEL_L, 4);
 		return true;
 	}
 
