@@ -1,6 +1,6 @@
-<?php namespace Canducci\QRcode;
+<?php namespace Canducci\QuickResponse;
 
-use Canducci\QRcode\Contracts\IMessageText;
+use Canducci\QuickResponse\Contracts\IMessageText;
 
 class MessageText implements IMessageText {
 

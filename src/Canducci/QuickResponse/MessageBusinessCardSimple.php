@@ -1,8 +1,8 @@
-<?php namespace Canducci\QRcode;
+<?php namespace Canducci\QuickResponse;
 
-use Canducci\QRcode\Contracts\IMessageBusinessCardSimple;
-use Canducci\QRcode\Contracts\IMessagePeople;
-use Canducci\QRcode\Contracts\IMessagePhone;
+use Canducci\QuickResponse\Contracts\IMessageBusinessCardSimple;
+use Canducci\QuickResponse\Contracts\IMessagePeople;
+use Canducci\QuickResponse\Contracts\IMessagePhone;
 
 class MessageBusinessCardSimple implements IMessageBusinessCardSimple {
 

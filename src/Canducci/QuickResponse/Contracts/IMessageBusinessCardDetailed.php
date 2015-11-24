@@ -1,4 +1,4 @@
-<?php namespace Canducci\QRcode\Contracts;
+<?php namespace Canducci\QuickResponse\Contracts;
 
 interface IMessageBusinessCardDetailed
     extends IMessageBusinessCardSimple, IMessageSimpleEmail {

@@ -1,14 +1,14 @@
 <?php
 
-use Canducci\QRcode\Contracts\IMessageType;
-use Canducci\QRcode\QuickResponseLevel;
-use Canducci\QRcode\QuickResponsePixel;
-use Canducci\QRcode\QuickResponseFrameSize;
+use Canducci\QuickResponse\Contracts\IMessageType;
+use Canducci\QuickResponse\QuickResponseLevel;
+use Canducci\QuickResponse\QuickResponsePixel;
+use Canducci\QuickResponse\QuickResponseFrameSize;
 
 if (!function_exists('quickresponse')) {
     function quickresponse()
     {
-        return app('Canducci\QRcode\Contracts\IQuickResponse');
+        return app('Canducci\QuickResponse\Contracts\IQuickResponse');
     }
 }
 

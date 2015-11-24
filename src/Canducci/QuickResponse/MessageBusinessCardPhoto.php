@@ -1,10 +1,8 @@
-<?php namespace Canducci\QRcode;
+<?php namespace Canducci\QuickResponse;
 
-use Canducci\QRcode\Contracts\IMessageBusinessCardPhoto;
+use Canducci\QuickResponse\Contracts\IMessageBusinessCardPhoto;
 
-class MessageBusinessCardPhoto
-    extends MessageBusinessCardSimple
-    implements IMessageBusinessCardPhoto {
+class MessageBusinessCardPhoto extends MessageBusinessCardSimple implements IMessageBusinessCardPhoto {
 
     protected $photo;
 

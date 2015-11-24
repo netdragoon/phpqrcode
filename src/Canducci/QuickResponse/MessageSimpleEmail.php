@@ -1,6 +1,6 @@
-<?php namespace Canducci\QRcode;
+<?php namespace Canducci\QuickResponse;
 
-use Canducci\QRcode\Contracts\IMessageSimpleEmail;
+use Canducci\QuickResponse\Contracts\IMessageSimpleEmail;
 
 class MessageSimpleEmail implements IMessageSimpleEmail {
 

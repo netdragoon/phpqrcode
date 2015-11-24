@@ -1,6 +1,6 @@
-<?php namespace Canducci\QRcode;
+<?php namespace Canducci\QuickResponse;
 
-use Canducci\QRcode\Contracts\IMessageAddress;
+use Canducci\QuickResponse\Contracts\IMessageAddress;
 
 class MessageAddress implements IMessageAddress {
 

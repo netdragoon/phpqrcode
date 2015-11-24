@@ -1,4 +1,4 @@
-<?php namespace Canducci\QRcode\Contracts; 
+<?php namespace Canducci\QuickResponse\Contracts;
 
 use Canducci\QRcode\QuickResponseFrameSize;
 use Canducci\QRcode\QuickResponseLevel;

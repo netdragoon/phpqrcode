@@ -1,12 +1,12 @@
-<?php namespace Canducci\QRcode\Providers;
+<?php namespace Canducci\QuickResponse\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class QuickResponseProvider extends ServiceProvider {
+class QuickResponseServiceProvider extends ServiceProvider {
 
     public function register()
     {
-        $this->app->singleton('Canducci\QRcode\Contracts\IQuickResponse',
-            'Canducci\QRcode\QuickResponse');
+        $this->app->singleton('Canducci\QuickResponse\Contracts\IQuickResponse',
+            'Canducci\QuickResponse\QuickResponse');
     }
 }

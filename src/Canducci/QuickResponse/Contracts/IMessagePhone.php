@@ -1,4 +1,4 @@
-<?php namespace Canducci\QRcode\Contracts;
+<?php namespace Canducci\QuickResponse\Contracts;
 
 interface IMessagePhone extends IMessageType {
     public function setCountry($code);

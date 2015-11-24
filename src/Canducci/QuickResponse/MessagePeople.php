@@ -1,4 +1,4 @@
-<?php namespace Canducci\QRcode;
+<?php namespace Canducci\QuickResponse;
 
 class MessagePeople extends MessageSkype {
 

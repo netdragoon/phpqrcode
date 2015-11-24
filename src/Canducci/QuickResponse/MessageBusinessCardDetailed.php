@@ -1,12 +1,10 @@
-<?php namespace Canducci\QRcode;
+<?php namespace Canducci\QuickResponse;
 
-use Canducci\QRcode\Contracts\IMessageAddress;
-use Canducci\QRcode\Contracts\IMessageBusinessCardDetailed;
-use Canducci\QRcode\Contracts\IMessagePhone;
+use Canducci\QuickResponse\Contracts\IMessageAddress;
+use Canducci\QuickResponse\Contracts\IMessageBusinessCardDetailed;
+use Canducci\QuickResponse\Contracts\IMessagePhone;
 
-class MessageBusinessCardDetailed
-    extends MessageBusinessCardSimple
-    implements IMessageBusinessCardDetailed
+class MessageBusinessCardDetailed extends MessageBusinessCardSimple implements IMessageBusinessCardDetailed
 {
     protected $sortName;
     protected $orgName;

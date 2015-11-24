@@ -1,6 +1,6 @@
-<?php namespace Canducci\QRcode;
+<?php namespace Canducci\QuickResponse;
 
-use Canducci\QRcode\Contracts\IMessageSkype;
+use Canducci\QuickResponse\Contracts\IMessageSkype;
 
 class MessageSkype implements IMessageSkype {
 

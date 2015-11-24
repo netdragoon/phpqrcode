@@ -1,4 +1,4 @@
-<?php namespace Canducci\QRcode\Facades;
+<?php namespace Canducci\QuickResponse\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -6,6 +6,6 @@ class QuickResponse extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'Canducci\QRcode\Contracts\IQuickResponse';
+        return 'Canducci\QuickResponse\Contracts\IQuickResponse';
     }
 }

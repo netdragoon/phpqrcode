@@ -1,7 +1,7 @@
-<?php namespace Canducci\QRcode;
+<?php namespace Canducci\QuickResponse;
 
-use Canducci\QRcode\Contracts\IMessageType;
-use Canducci\QRcode\Contracts\IQuickResponse;
+use Canducci\QuickResponse\Contracts\IMessageType;
+use Canducci\QuickResponse\Contracts\IQuickResponse;
 use QRcode as QR;
 
 require __DIR__."/Lib/qrlib.php";
