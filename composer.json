@@ -22,10 +22,10 @@
     },
     "autoload": {
         "psr-4": {
-            "Canducci\\QRcode\\": "src/Canducci/QRcode/"
+            "Canducci\\QuickResponse\\": "src/Canducci/QuickResponse/"
         },
         "files": [
-            "src/Canducci/QRcode/QuickResponseHelper.php"
+            "src/Canducci/QuickResponse/QuickResponseHelper.php"
         ]
     }
 }
