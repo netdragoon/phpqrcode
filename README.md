@@ -221,7 +221,7 @@ ___Cartão de Visita Simples com Foto___
     
 ###Direto no navegador:
 
-___Crie um rota___
+___Rota___
 
     get('print', function()
     {
@@ -232,7 +232,7 @@ ___Crie um rota___
                 ->render();
     });
     
-___Em dua View___
+___View___
 
     <div>
         <img src="/print" border="0" />
