@@ -77,6 +77,7 @@ Agora execute esse comando no seu console:
 
     $ composer update
 
+###Laravel
 
 Abra o arquivo `config/app.php` e adicione essa linha em suas configurações de `providers`:
 
@@ -237,3 +238,38 @@ ___View___
     <div>
         <img src="/print" border="0" />
     </div>
+
+___
+
+####Observação: ___Esse pacote funciona perfeitamente fora do framework Laravel___
+
+Crie um composer.json com formato logo abaixo:
+
+```JSON
+{    
+    "require": {     
+        "canducci/quickresponse":"dev-master"   
+    }
+}
+
+```
+
+Rode o comando `$ composer update`, e após a instalação use assim:
+
+```PHP
+<?php
+
+    require 'vendor/autoload.php';    
+    
+    $qr      = new Canducci\QRcode\QuickResponse();
+    
+    $msg = new Canducci\QRcode\MessageText();
+    $msg->setText("Test");
+    echo $qr->data($msg)->render();
+    
+    //OU
+    
+    //echo $qr->data($msg)->saveAs('path_da_pasta_nome_imagem'); 
+    // Exemplo: q/1.png
+
+```

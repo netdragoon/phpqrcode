@@ -2,7 +2,7 @@
     "name": "canducci/quickresponse",
     "type": "library",
     "description": "Canducci QuickResponse",
-    "keywords": ["Canducci", "QuickResponse", "Brazil", "Brasil", "QRcode"],
+    "keywords": ["Canducci", "QuickResponse", "Brazil", "Brasil", "QRcode", "Laravel"],
     "homepage": "https://github.com/netdragoon/phpqrcode",
     "license": "MIT",
     "authors": [
