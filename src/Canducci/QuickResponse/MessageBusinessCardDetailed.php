@@ -13,6 +13,18 @@ class MessageBusinessCardDetailed extends MessageBusinessCardSimple implements I
     protected $address;
     protected $email;
 
+    function __construct(IMessagePeople $people, IMessagePhone $phone, $sortName, $orgName, $phoneprivate, $phonecelular, $address, $email)
+    {
+        $this->sortName = $sortName;
+        $this->orgName = $orgName;
+        $this->phoneprivate = $phoneprivate;
+        $this->phonecelular = $phonecelular;
+        $this->address = $address;
+        $this->email = $email;
+        parent::__construct($people, $phone);
+    }
+
+
     public function setSortName($names)
     {
         $this->sortName = $names;

@@ -231,7 +231,7 @@ $msg->setText("Test Laravel");
 ```PHP
 qrSaveAs($msg, 't.png');
 //ou
-return quickresponse()->data($msg)->saveAs('1.png');
+quickresponse()->data($msg)->saveAs('1.png');
 //ou
 QuickResponse::data($msg)->saveAs('1.png');
     

@@ -34,7 +34,7 @@ class QuickResponse implements IQuickResponse {
 	protected function renderAs($path = false,
 								 $level = QuickResponseLevel::L,
 								 $pixel = QuickResponsePixel::Three,
-								 $frame = QuickResponseFrameSize::None,
+								 $frame = QuickResponseFrameSize::Two,
 								 $print = false)
 	{
 		return QR::png($this->message->getMessage(), $path, $level, $pixel, $frame, $print);

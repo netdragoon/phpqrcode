@@ -1,5 +1,3 @@
 <?php namespace Canducci\QuickResponse\Contracts;
 
-interface IMessageSMS extends IMessagePhone {
-
-}
+interface IMessageSMS extends IMessagePhone { }

@@ -8,6 +8,14 @@ class MessageExtendedEmail implements IMessageExtendedEmail {
     protected $subject;
     protected $body;
 
+    public function __construct($email, $subject, $body)
+    {
+        $this->email = $email;
+        $this->subject = $subject;
+        $this->body = $body;
+    }
+
+
     public function getEmail()
     {
         return $this->email;
@@ -47,4 +55,5 @@ class MessageExtendedEmail implements IMessageExtendedEmail {
             urlencode($this->subject),
             urlencode($this->body));
     }
+
 }

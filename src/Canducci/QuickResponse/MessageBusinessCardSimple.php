@@ -9,6 +9,13 @@ class MessageBusinessCardSimple implements IMessageBusinessCardSimple {
     protected $people;
     protected $phone;
 
+    function __construct(IMessagePeople $people, IMessagePhone $phone)
+    {
+        $this->people = $people;
+        $this->phone = $phone;
+    }
+
+
     public function getPeople()
     {
         return $this->people;

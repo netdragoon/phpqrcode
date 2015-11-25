@@ -6,6 +6,11 @@ class MessageSimpleEmail implements IMessageSimpleEmail {
 
     protected $email;
 
+    public function __construct($email)
+    {
+        $this->email = $email;
+    }
+
     public function getEmail()
     {
         return $this->email;
@@ -21,4 +26,5 @@ class MessageSimpleEmail implements IMessageSimpleEmail {
     {
         return sprintf('mailto:%s',$this->email);
     }
+
 }

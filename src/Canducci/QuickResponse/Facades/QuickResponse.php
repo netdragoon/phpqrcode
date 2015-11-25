@@ -2,10 +2,11 @@
 
 use Illuminate\Support\Facades\Facade;
 
-class QuickResponse extends Facade
-{
+class QuickResponse extends Facade {
+
     protected static function getFacadeAccessor()
     {
         return 'Canducci\QuickResponse\Contracts\IQuickResponse';
     }
+
 }

@@ -7,5 +7,4 @@ interface IMessageExtendedEmail extends IMessageSimpleEmail {
     public function getSubject();
     public function getBody();
 
-
 }
