@@ -1,6 +1,9 @@
 <?php namespace Canducci\QuickResponse;
 
-class MessagePeople extends MessageSkype {
+use Canducci\QuickResponse\Contracts\IMessagePeople;
+use Canducci\QuickResponse\Contracts\IMessageSkype;
+
+class MessagePeople extends MessageSkype implements IMessagePeople, IMessageSkype {
 
     public function __construct($name)
     {

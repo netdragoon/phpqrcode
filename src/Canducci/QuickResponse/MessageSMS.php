@@ -4,7 +4,7 @@ use Canducci\QuickResponse\Contracts\IMessageSMS;
 
 class MessageSMS extends MessagePhone implements IMessageSMS {
 
-    function __construct($country = 55, $area = null, $number = null)
+    function __construct($country, $area, $number)
     {
         parent::__construct($country, $area, $number);
     }

@@ -8,7 +8,7 @@ class MessagePhone implements IMessagePhone {
     protected $area;
     protected $number;
 
-    function __construct($country = 55, $area = null, $number = null)
+    function __construct($country, $area, $number)
     {
         $this->country = $country;
         $this->area = $area;

@@ -1,6 +1,5 @@
 <?php
 
-use Canducci\QuickResponse\Contracts\IMessageType;
 use Canducci\QuickResponse\MessageBusinessCardDetailed;
 use Canducci\QuickResponse\MessagePhone;
 use Canducci\QuickResponse\MessageText;
@@ -12,10 +11,15 @@ use Canducci\QuickResponse\MessageSkype;
 use Canducci\QuickResponse\MessageAddress;
 use Canducci\QuickResponse\MessageBusinessCardSimple;
 use Canducci\QuickResponse\MessageBusinessCardPhoto;
+
 use Canducci\QuickResponse\QuickResponseLevel;
 use Canducci\QuickResponse\QuickResponsePixel;
 use Canducci\QuickResponse\QuickResponseFrameSize;
 
+use Canducci\QuickResponse\Contracts\IMessagePeople;
+use Canducci\QuickResponse\Contracts\IMessageAddress;
+use Canducci\QuickResponse\Contracts\IMessagePhone;
+use Canducci\QuickResponse\Contracts\IMessageType;
 
 if (!function_exists('quickresponse')) {
 
@@ -122,9 +126,9 @@ if (!function_exists('messageBusinessCardSimple')) {
 
 if (!function_exists('messageBusinessCardDetailed')) {
 
-    function messageBusinessCardDetailed(IMessagePeople $people, IMessagePhone $phone, $sortName, $orgName, $phoneprivate, $phonecelular, $address, $email)
+    function messageBusinessCardDetailed(IMessagePeople $people, IMessagePhone $phone, IMessagePhone $phoneprivate, IMessagePhone $phonecelular,$sortName, $orgName, $email, IMessageAddress $address)
     {
-        return (new MessageBusinessCardDetailed($people, $phone, $sortName, $orgName, $phoneprivate, $phonecelular, $address, $email));
+        return (new MessageBusinessCardDetailed($people, $phone, $phoneprivate, $phonecelular, $sortName, $orgName, $email, $address));
     }
 }
 

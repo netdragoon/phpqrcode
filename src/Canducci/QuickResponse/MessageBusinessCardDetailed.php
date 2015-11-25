@@ -1,5 +1,6 @@
 <?php namespace Canducci\QuickResponse;
 
+use Canducci\QuickResponse\Contracts\IMessagePeople;
 use Canducci\QuickResponse\Contracts\IMessageAddress;
 use Canducci\QuickResponse\Contracts\IMessageBusinessCardDetailed;
 use Canducci\QuickResponse\Contracts\IMessagePhone;
@@ -13,7 +14,7 @@ class MessageBusinessCardDetailed extends MessageBusinessCardSimple implements I
     protected $address;
     protected $email;
 
-    function __construct(IMessagePeople $people, IMessagePhone $phone, $sortName, $orgName, $phoneprivate, $phonecelular, $address, $email)
+    function __construct(IMessagePeople $people, IMessagePhone $phone, IMessagePhone $phoneprivate, IMessagePhone $phonecelular, $sortName, $orgName, $email, IMessageAddress $address)
     {
         $this->sortName = $sortName;
         $this->orgName = $orgName;
@@ -22,6 +23,7 @@ class MessageBusinessCardDetailed extends MessageBusinessCardSimple implements I
         $this->address = $address;
         $this->email = $email;
         parent::__construct($people, $phone);
+
     }
 
 

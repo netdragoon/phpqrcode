@@ -6,7 +6,7 @@ class MessageText implements IMessageText {
 
 	protected $text;
 
-	function __construct($text = null)
+	function __construct($text)
 	{
 		$this->text = $text;
 	}
