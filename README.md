@@ -104,8 +104,12 @@ Para funcionar o apelido (facade) adicione essa linha em suas configurações de
 ___Para Texto ou Links:___
 
     $name = "test";
-    $msg = new \Canducci\QuickResponse\MessageText($name);    
+    $msg = new \Canducci\QuickResponse\MessageText($name); 
+    //Facade 
     QuickResponse::data($msg)->saveAs('q/text.png');
+    //Instância
+    $qr = new Canducci\QuickResponse\QuickResponse();
+    $qr->data($msg)->saveAs('q/text.png');
     
 ___Para Telefone___
     
@@ -224,6 +228,7 @@ ___Rota___
     get('print', function()
     {
         $msg = messageText('https://packagist.org/packages/canducci/quickresponse');
+        //Facade
         return QuickResponse::data($msg)
                 ->render();
     });
@@ -254,12 +259,15 @@ Rode o comando `$ composer update`, e após a instalação use assim:
 ```PHP
 <?php
 
-    require 'vendor/autoload.php';    
-    
+    require 'vendor/autoload.php';
+        
+    //Instância
     $msg = new Canducci\QuickResponse\MessageText('Test');
+    
+    //Instância
     $qr = new Canducci\QuickResponse\QuickResponse();
     
-    echo $qr->data($msg)->render();
+    echo $qr->data($msg)->render(); // saída imagem
     
     //OU
     
