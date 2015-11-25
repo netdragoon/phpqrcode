@@ -107,11 +107,21 @@ __Recebe uma `interface` de message__
     
 ___Renderiza a imagem e exibe direto no navegador___
 
-    public function render($level = QuickResponseLevel::L, $pixel = QuickResponsePixel::Three, $frame = QuickResponseFrameSize::Two)
+    public function render($level = QuickResponseLevel::L, $pixel = QuickResponsePixel::Three, 
+                    $frame = QuickResponseFrameSize::Two)
 
-__Cria a imagem e grava em disco no formato___ `.png`
+___Cria a imagem e grava em disco no formato___ `.png`
 
-    public function saveAs($path, $level = QuickResponseLevel::L, $pixel = QuickResponsePixel::Three, $frame = QuickResponseFrameSize::Two)
+    public function saveAs($path, $level = QuickResponseLevel::L, $pixel = QuickResponsePixel::Three, 
+                    $frame = QuickResponseFrameSize::Two)
+
+####A sequencia dos métodos é:
+
+    1 - Passe a interface `IMessateType` no método `data($msg)`.
+    2 - Depois utilize `render()` ou `saveAs()`.
+    3 - Sequencia: (Exemplo)    
+        $msg = new \Canducci\QuickResponse\MessageText($name); 
+        QuickResponse::data($msg)->saveAs('q/text.png');
 
 ___Observação:___ Os métodos `render` e `saveAs` já estão formatados em um padrão, deixando livre para novas configurações.
 
