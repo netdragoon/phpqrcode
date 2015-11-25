@@ -101,7 +101,7 @@ Para funcionar o apelido (facade) adicione essa linha em suas configurações de
 
 ####Métodos
 
-__Recebe uma `interface` de message__
+___Recebe uma `interface` de message___
 
     public function data(IMessageType $message)
     
