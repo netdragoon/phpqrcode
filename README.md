@@ -101,13 +101,11 @@ Para funcionar o apelido (facade) adicione essa linha em suas configurações de
 
 ###Como utilizar no Laravel
 
-{| class="wikitable"
-! style="text-align: center;width: 50%" | FACADE
-! style="text-align: center;width: 50%" | HELPER
-|-
-| `Code::generate()`
-| `Code::generate()`
-|}
+|       FACADE       |       HELPER       |
+|:------------------:|:------------------:|
+| $name = "test";                                                       ||
+| $msg = new \Canducci\QuickResponse\MessageText($name);                ||    
+| QuickResponse::data($msg)->saveAs('q/text.png'); | `Code::generate()` ||
 
 ___Para Texto ou Links:___
 
