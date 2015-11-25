@@ -322,7 +322,7 @@ Rode o comando `$ composer update`, e após a instalação use assim:
 
     require 'vendor/autoload.php';    
     
-    $qr      = new Canducci\QuickResponse\QuickResponse();
+    $qr = new Canducci\QuickResponse\QuickResponse();
     
     $msg = new Canducci\QuickResponse\MessageText();
     $msg->setText("Test");
