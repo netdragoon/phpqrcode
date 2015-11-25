@@ -101,12 +101,6 @@ Para funcionar o apelido (facade) adicione essa linha em suas configurações de
 
 ###Como utilizar no Laravel
 
-|       FACADE       |       HELPER       |
-|:------------------:|:------------------:|
-| $name = "test";                                                       ||
-  $msg = new \Canducci\QuickResponse\MessageText($name);                ||    
- QuickResponse::data($msg)->saveAs('q/text.png');                        `Code::generate()` 
-
 ___Para Texto ou Links:___
 
     $name = "test";
