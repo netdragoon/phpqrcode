@@ -104,127 +104,63 @@ Para funcionar o apelido (facade) adicione essa linha em suas configurações de
 ___Para Texto ou Links:___
 
     $name = "test";
-    $msg = new \Canducci\QuickResponse\MessageText();
-    $msg->setText($name);
+    $msg = new \Canducci\QuickResponse\MessageText($name);    
     QuickResponse::data($msg)->saveAs('q/text.png');
     
 ___Para Telefone___
     
-    $msg = new \Canducci\QuickResponse\MessagePhone();
-    $msg->setCountry(55)
-        ->setArea(11)
-        ->setNumber(11111111);
+    $msg = new \Canducci\QuickResponse\MessagePhone(55,11,1111111);    
     QuickResponse::data($msg)->saveAs('q/phone.png');
     
 ___Para SMS___
     
-    $msg = new \Canducci\QuickResponse\MessageSMS();
-    $msg->setCountry(55)
-        ->setArea(11)
-        ->setNumber(11111111);
+    $msg = new \Canducci\QuickResponse\MessageSMS(55,11,11111111);    
     QuickResponse::data($msg)->saveAs('q/sms.png');    
 	
 
 ___Para Email Simples___
 
-    $msg = new \Canducci\QuickResponse\MessageSimpleEmail();
-    $msg->setEmail('test@test.com');
+    $msg = new \Canducci\QuickResponse\MessageSimpleEmail('test@test.com');    
     QuickResponse::data($msg)->saveAs('q/emailsimple.png');
         
 ___Para Email Completo___
     
-    $msg = new \Canducci\QuickResponse\MessageExtendedEmail();
-    $msg->setEmail('test@test.com')
-        ->setSubject('Test')
-        ->setBody('Test Complete');
+    $msg = new \Canducci\QuickResponse\MessageExtendedEmail('test@test.com', 'Test', 'Test Complete');    
     QuickResponse::data($msg)->saveAs('q/email.png');
 
 ___Para Skype___
 
-    $msg = new \Canducci\QuickResponse\MessageSkype();
-    $msg->setName('test@test.com');
+    $msg = new \Canducci\QuickResponse\MessageSkype('test@test.com');    
     QuickResponse::data($msg)->saveAs('q/skype.png');
 
 ___Cartão de Visita Simples___
 
-    $msg = new \Canducci\QuickResponse\MessageBusinessCardSimple();
-    
-    $people = new \Canducci\QuickResponse\MessagePeople();
-    $people->setName('Nome');
-    
-    $phone = new \Canducci\QuickResponse\MessagePhone();
-    $phone->setCountry(55)
-        ->setArea(11)
-        ->setNumber(11111111);
-        
-    $msg->setPeople($people);
-    $msg->setPhone($phone);
-    
+    $people = messagePeople('Test');
+    $phone = messagePhone(55,11,11111111);
+    $msg = messageBusinessCardSimple($people, $phone);
     QuickResponse::data($msg)->saveAs('q/cardsimple.png');
     
 ___Cartão de Visita Completo___
 
-    $msg = new \Canducci\QuickResponse\MessageBusinessCardDetailed();
-    $people = new \Canducci\QuickResponse\MessagePeople();
-    $people->setName('Test');
-    
-    $phone1 = new \Canducci\QuickResponse\MessagePhone();
-    $phone1->setCountry(55)
-        ->setArea(11)
-        ->setNumber(11111111);
-        
-    $phone2 = new \Canducci\QuickResponse\MessagePhone();
-    $phone2->setCountry(55)
-        ->setArea(12)
-        ->setNumber(12121212);
-        
-    $phone3 = new \Canducci\QuickResponse\MessagePhone();
-    $phone3->setCountry(55)
-        ->setArea(13)
-        ->setNumber(13131313);
-        
-    $msg->setPeople($people);
-    $msg->setPhone($phone1);
-    $msg->setPhonePrivate($phone2);
-    $msg->setPhoneCelular($phone3);
-    
-    $msg->setEmail('test@test.com');
-    $msg->setOrganizationName('Home Office');
-    $msg->setSortName('test1;test2');
-    $address = new \Canducci\QuickResponse\MessageAddress();
-    $address->setCountry('Brasil')
-            ->setExt('Home')
-            ->setLabel('Office')
-            ->setPobox('')
-            ->setTown('Sao Paulo')
-            ->setPostCode('04500000')
-            ->setRegion('SP')
-            ->setStreet('Rua Test, 001');
-            
-    $msg->setMessageAddress($address);
-    
+    $people = messagePeople('Test');
+    $phone = messagePhone(55,11,11111111);
+    $phone1 = messagePhone(55,18,32695189);
+    $phone2 = messagePhone(55,18,32695189);
+    $address = messageAddress('Office', '','Home','Rua, 001','Sao Paulo','SP','04500000','Brasil');
+    $msg = messageBusinessCardDetailed($people,$phone,$phone1,$phone2,'sobre1;test1','Home Office','dt@dt.com', $address);
     QuickResponse::data($msg)->saveAs('q/carsdetailed.png');
     
 ___Cartão de Visita Simples com Foto___
 
-    $msg = new \Canducci\QuickResponse\MessageBusinessCardPhoto();
-    $people = new \Canducci\QuickResponse\MessagePeople();
-    $people->setName('Test');
-    $phone = new \Canducci\QuickResponse\MessagePhone();
-    $phone->setCountry(55)
-        ->setArea(11)
-        ->setNumber(11111111);
-    $msg->setPeople($people);
-    $msg->setPhone($phone);
-    //Foto proposta de 40x40 de baixa resolução 
-    $msg->setPhoto(file_get_contents('40x40.jpg'));
+    $people = messagePeople('Test');
+    $phone = messagePhone(55,11,11111111);
+    $msg = messageBusinessCardPhoto($people, $phone, file_get_contents('40x40.jpg'));
     QuickResponse::data($msg)->saveAs('q/carsphoto.png');
 
 ###Helpers
 
 ```
-$msg = new \Canducci\QuickResponse\MessageText();
-$msg->setText("Test Laravel");
+$msg = messageText('Test Laravel');
 ```
 
 - Save
@@ -287,9 +223,7 @@ ___Rota___
 
     get('print', function()
     {
-        $msg = new \Canducci\QuickResponse\MessageText();
-        $msg->setText('https://packagist.org/packages/canducci/quickresponse');
-    
+        $msg = messageText('https://packagist.org/packages/canducci/quickresponse');
         return QuickResponse::data($msg)
                 ->render();
     });
@@ -309,7 +243,7 @@ Crie um composer.json com formato logo abaixo:
 ```JSON
 {    
     "require": {     
-        "canducci/quickresponse":"dev-master"   
+        "canducci/quickresponse":"0.0.1"   
     }
 }
 
@@ -322,15 +256,13 @@ Rode o comando `$ composer update`, e após a instalação use assim:
 
     require 'vendor/autoload.php';    
     
+    $msg = new Canducci\QuickResponse\MessageText('Test');
     $qr = new Canducci\QuickResponse\QuickResponse();
     
-    $msg = new Canducci\QuickResponse\MessageText();
-    $msg->setText("Test");
     echo $qr->data($msg)->render();
     
     //OU
     
-    //echo $qr->data($msg)->saveAs('path_da_pasta_nome_imagem'); 
-    // Exemplo: q/1.png
+    $qr->data($msg)->saveAs('path_da_pasta_nome_imagem'); // Exemplo: q/1.png
 
 ```
