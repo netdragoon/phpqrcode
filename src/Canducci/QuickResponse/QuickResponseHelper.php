@@ -34,7 +34,7 @@ if (!function_exists('qrRender')) {
             ->data($message)
             ->render($level, $pixel, $frame, false);
     }
-    
+
 }
 
 if (!function_exists('qrSaveAs')) {

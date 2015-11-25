@@ -246,7 +246,41 @@ return quickresponse()->data($msg)->render();
 return QuickResponse::data($msg)->render();
 	
 ```	
-	
+___Mais Helpers___
+
+    function messageText($text); 
+        return new MessageText
+        
+    function messagePeople($name);
+        return new MessagePeople
+        
+    function messageAddress($label, $pobox, $ext, $street, $town, $region, $postcode, $country);
+        return new MessageAddress
+        
+    function messageSkype($name);
+        return new MessageSkype
+         
+    function messagePhone($country,$area,$number);
+        return new MessagePhone
+        
+    function messageSMS($country,$area, $number);
+        return new MessageSMS
+        
+    function messageSimpleEmail($email);
+        return new MessageSimpleEmail
+        
+    function messageExtendedEmail($email, $subject, $body);
+        return new MessageExtendedEmail
+        
+    function messageBusinessCardSimple(IMessagePeople $people, IMessagePhone $phone);
+        return new MessageBusinessCardSimple
+        
+    function messageBusinessCardDetailed(IMessagePeople $people, IMessagePhone $phone, $sortName, $orgName, $phoneprivate, $phonecelular, $address, $email);
+        return new MessageBusinessCardDetailed
+        
+    function messageBusinessCardPhoto(IMessagePeople $people, IMessagePhone $phone, $photo);
+        return new MessageBusinessCardPhoto
+    
 ###Direto no navegador:
 
 ___Rota___
