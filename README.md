@@ -1,6 +1,6 @@
 # PHP QR Code 
 
-###PHP QR Code version (1.1.4)
+####PHP QR Code version (1.1.4)
 
 PHP QR Code - Site http://sourceforge.net/projects/phpqrcode/ 
 
@@ -49,9 +49,9 @@ countries.
 Reed-Solomon code encoder is written by Phil Karn, KA9Q.
 Copyright (C) 2002, 2003, 2004, 2006 Phil Karn, KA9Q
 
-# Canducci QuickResponse
+## Canducci QuickResponse
 
-### QR Code
+#### QR Code
 
 [![Canducci QuickResponse](http://i666.photobucket.com/albums/vv25/netdragoon/pacote_zpsvgkl4fbt.png)](https://packagist.org/packages/canducci/quickresponse)
 
@@ -61,9 +61,9 @@ Copyright (C) 2002, 2003, 2004, 2006 Phil Karn, KA9Q
 [![Latest Unstable Version](https://poser.pugx.org/canducci/quickresponse/v/unstable)](https://packagist.org/packages/canducci/quickresponse) 
 [![License](https://poser.pugx.org/canducci/quickresponse/license)](https://packagist.org/packages/canducci/quickresponse)
 
-## Instalação
+### Instalação
 
-### Configurações
+#### Configurações
 
 ___Para aplicações Laravel, configure dessa maneira:___
 
@@ -77,7 +77,7 @@ Agora execute esse comando no seu console:
 
     $ composer update
 
-###Laravel
+####Laravel
 
 Abra o arquivo `config/app.php` e adicione essa linha em suas configurações de `providers`:
 
@@ -99,7 +99,23 @@ Para funcionar o apelido (facade) adicione essa linha em suas configurações de
 ]
 ```
 
-###Como utilizar no Laravel
+####Métodos
+
+__Recebe uma `interface` de message__
+
+    public function data(IMessageType $message)
+    
+___Renderiza a imagem e exibe direto no navegador___
+
+    public function render($level = QuickResponseLevel::L, $pixel = QuickResponsePixel::Three, $frame = QuickResponseFrameSize::Two)
+
+__Cria a imagem e grava em disco no formato___ `.png`
+
+    public function saveAs($path, $level = QuickResponseLevel::L, $pixel = QuickResponsePixel::Three, $frame = QuickResponseFrameSize::Two)
+
+___Observação:___ Os métodos `render` e `saveAs` já estão formatados em um padrão, deixando livre para novas configurações.
+
+####Como utilizar no Laravel
 
 ___Para Texto ou Links:___
 
@@ -119,8 +135,7 @@ ___Para Telefone___
 ___Para SMS___
     
     $msg = new \Canducci\QuickResponse\MessageSMS(55,11,11111111);    
-    QuickResponse::data($msg)->saveAs('q/sms.png');    
-	
+    QuickResponse::data($msg)->saveAs('q/sms.png');    	
 
 ___Para Email Simples___
 
@@ -161,7 +176,7 @@ ___Cartão de Visita Simples com Foto___
     $msg = messageBusinessCardPhoto($people, $phone, file_get_contents('40x40.jpg'));
     QuickResponse::data($msg)->saveAs('q/carsphoto.png');
 
-###Helpers
+####Helpers
 
 ```
 $msg = messageText('Test Laravel');
@@ -222,7 +237,7 @@ ___Mais Helpers___
     function messageBusinessCardPhoto(IMessagePeople $people, IMessagePhone $phone, $photo);
         return new MessageBusinessCardPhoto
     
-###Direto no navegador:
+####Direto no navegador:
 
 ___Rota___
 
