@@ -215,8 +215,8 @@ ___Mais Helpers___
     function messageBusinessCardSimple(IMessagePeople $people, IMessagePhone $phone);
         return new MessageBusinessCardSimple
         
-    function messageBusinessCardDetailed(IMessagePeople $people, IMessagePhone $phone, $sortName, $orgName, 
-                        $phoneprivate, $phonecelular, $address, $email);
+    function messageBusinessCardDetailed(IMessagePeople $people, IMessagePhone $phone, IMessagePhone $phoneprivate, 
+                    IMessagePhone $phonecelular,$sortName, $orgName, $email, IMessageAddress $address)
         return new MessageBusinessCardDetailed
         
     function messageBusinessCardPhoto(IMessagePeople $people, IMessagePhone $phone, $photo);
